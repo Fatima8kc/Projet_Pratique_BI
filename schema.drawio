@@ -1,0 +1,43 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36 Edg/139.0.0.0" version="28.1.1">
+  <diagram id="DW1" name="DW Superstore">
+    <mxGraphModel dx="864" dy="452" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="fact" value="dw.FactSales&lt;br&gt;• FactSalesKey (PK)&lt;br&gt;• OrderID_BK&lt;br&gt;• OrderDateKey&lt;br&gt;• ShipDateKey&lt;br&gt;• CustomerKey&lt;br&gt;• ProductKey&lt;br&gt;• GeoKey&lt;br&gt;• ShipModeKey&lt;br&gt;• Quantity, Sales, Discount, Profit" style="shape=rectangle;rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="470" y="330" width="320" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="dimDate" value="dw.DimDate&#xa;• DateKey (PK)&#xa;• FullDate&#xa;• Year, Quarter&#xa;• Month, MonthName&#xa;• Day, DayName" style="shape=rectangle;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="80" y="120" width="260" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="dimCust" value="dw.DimCustomer&#xa;• CustomerKey (PK)&#xa;• CustomerID&#xa;• CustomerName&#xa;• Segment" style="shape=rectangle;rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="80" y="360" width="260" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="dimProd" value="dw.DimProduct&lt;br&gt;• ProductKey (PK)&lt;br&gt;• ProductID&lt;br&gt;• SubCategory, Category,&amp;nbsp;ProductName&lt;br&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;•&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;UnitPrice&lt;/span&gt;&lt;/div&gt;" style="shape=rectangle;rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="840" y="140" width="280" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="dimGeo" value="dw.DimGeography&#xa;• GeoKey (PK)&#xa;• Country&#xa;• Region&#xa;• State&#xa;• City&#xa;• PostalCode" style="shape=rectangle;rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="850" y="360" width="270" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="dimShip" value="dw.DimShipMode&#xa;• ShipModeKey (PK)&#xa;• ShipMode" style="shape=rectangle;rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="500" y="560" width="220" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" style="endArrow=block;strokeColor=#6c8ebf;" parent="1" source="dimDate" target="fact" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" style="endArrow=block;strokeColor=#9673a6;" parent="1" source="dimCust" target="fact" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" style="endArrow=block;strokeColor=#82b366;" parent="1" source="dimProd" target="fact" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" style="endArrow=block;strokeColor=#b85450;" parent="1" source="dimGeo" target="fact" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" style="endArrow=block;strokeColor=#d79b00;" parent="1" source="dimShip" target="fact" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
